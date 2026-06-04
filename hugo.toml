@@ -42,8 +42,6 @@ paginate = 6
   [params.assets]
     favicon = "/favicon.ico"
     disableFingerprinting = true
-    favicon16x16 = ""
-    appleTouchIcon = ""
 
   [params.cover]
     hidden = false
@@ -79,9 +77,6 @@ paginate = 6
     text = "AI 探索者"
     icon = "🤖"
     iconHeight = 35
-
-  [params.assets]
-    disableFingerprinting = true
 
 [markup]
   [markup.highlight]
