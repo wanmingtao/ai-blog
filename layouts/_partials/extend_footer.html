@@ -1,0 +1,66 @@
+<!-- Reading Progress Bar -->
+<div class="reading-progress" id="reading-progress"></div>
+
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top" id="back-to-top" title="回到顶部">↑</a>
+
+<script>
+// Reading Progress Bar
+document.addEventListener("DOMContentLoaded", function() {
+  const progressBar = document.getElementById("reading-progress");
+  const backToTop = document.getElementById("back-to-top");
+  const postContent = document.querySelector(".post-content");
+  
+  if (postContent && progressBar) {
+    window.addEventListener("scroll", function() {
+      const contentTop = postContent.offsetTop;
+      const contentHeight = postContent.offsetHeight;
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      
+      const progress = Math.min(
+        ((scrollTop - contentTop + windowHeight) / contentHeight) * 100,
+        100
+      );
+      progressBar.style.width = Math.max(0, progress) + "%";
+    });
+  }
+  
+  // Back to Top
+  if (backToTop) {
+    window.addEventListener("scroll", function() {
+      if (window.scrollY > 300) {
+        backToTop.classList.add("visible");
+      } else {
+        backToTop.classList.remove("visible");
+      }
+    });
+    
+    backToTop.addEventListener("click", function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+});
+</script>
+
+<!-- Donate Button Injection for Single Posts -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const postContent = document.querySelector(".post-content");
+  if (!postContent) return;
+  
+  const isPost = document.querySelector(".post-header");
+  if (!isPost) return;
+  
+  const donateHTML = `
+    <div class="donate-section">
+      <h3>☕ 如果这篇文章对你有帮助</h3>
+      <p>欢迎请作者喝杯咖啡，你的支持是持续创作的动力</p>
+      <a href="/donate/" class="donate-btn">💰 打赏支持</a>
+    </div>
+  `;
+  
+  postContent.insertAdjacentHTML("beforeend", donateHTML);
+});
+</script>

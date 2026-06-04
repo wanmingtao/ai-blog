@@ -25,23 +25,63 @@ paginate = 6
   hideSummary = false
   showtoc = true
   tocopen = true
+  showDonateButton = true
 
   [params.homeInfoParams]
-    Title = "🤖 AI 探索者"
-    Content = "欢迎来到我的AI博客！这里记录我对人工智能领域的探索与思考，涵盖大语言模型、机器学习、深度学习、AI应用实践等前沿话题。"
+    Title = ""
+    Content = ""
 
   [[params.socialIcons]]
     name = "github"
     url = "https://github.com/wanmingtao"
 
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:wanmingtao@users.noreply.github.com"
+
   [params.assets]
     favicon = "/favicon.ico"
     disableFingerprinting = true
+    favicon16x16 = ""
+    appleTouchIcon = ""
 
   [params.cover]
     hidden = false
     hiddenInList = false
     hiddenInSingle = false
+
+  [params.profileMode]
+    enabled = true
+    title = "🤖 AI 探索者"
+    subtitle = "探索人工智能的无限可能 · 用代码改变世界"
+    imageUrl = "https://api.dicebear.com/7.x/bottts-neutral/svg?seed=ai-explorer&backgroundColor=0a5c36"
+    imageWidth = 150
+    imageHeight = 150
+    imageTitle = "AI Explorer"
+
+    [[params.profileMode.buttons]]
+      name = "📝 最新文章"
+      url = "/posts/"
+
+    [[params.profileMode.buttons]]
+      name = "🏷️ 标签云"
+      url = "/tags/"
+
+    [[params.profileMode.buttons]]
+      name = "👤 关于我"
+      url = "/about/"
+
+    [[params.profileMode.buttons]]
+      name = "☕ 请我喝咖啡"
+      url = "/donate/"
+
+  [params.label]
+    text = "AI 探索者"
+    icon = "🤖"
+    iconHeight = 35
+
+  [params.assets]
+    disableFingerprinting = true
 
 [markup]
   [markup.highlight]
@@ -49,6 +89,9 @@ paginate = 6
     guessSyntax = true
     lineNos = false
     style = "monokai"
+
+  [markup.goldmark.renderer]
+    unsafe = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
@@ -82,3 +125,15 @@ paginate = 6
   name = "🔍 搜索"
   url = "/search/"
   weight = 50
+
+[[menu.main]]
+  identifier = "about"
+  name = "👤 关于"
+  url = "/about/"
+  weight = 60
+
+[[menu.main]]
+  identifier = "donate"
+  name = "☕ 打赏"
+  url = "/donate/"
+  weight = 70

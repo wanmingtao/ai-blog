@@ -1,0 +1,269 @@
+<style>
+/* ===== Global Enhancements ===== */
+:root {
+  --primary-color: #0a5c36;
+  --accent-color: #10b981;
+  --gradient-start: #0a5c36;
+  --gradient-end: #059669;
+}
+
+/* ===== Profile Mode Enhancements ===== */
+.profile-mode .profile-inner {
+  padding: 2rem 0;
+}
+
+.profile-mode img {
+  border: 3px solid var(--accent-color) !important;
+  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-mode img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(16, 185, 129, 0.4);
+}
+
+.profile-mode .profile-inner .main-links a {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: #fff !important;
+  border: none !important;
+  border-radius: 10px;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(10, 92, 54, 0.3);
+}
+
+.profile-mode .profile-inner .main-links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(10, 92, 54, 0.4);
+  filter: brightness(1.1);
+}
+
+/* ===== Post Cards ===== */
+.post-entry {
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid rgba(128, 128, 128, 0.15) !important;
+}
+
+.post-entry:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-color: var(--accent-color) !important;
+}
+
+/* ===== Post Content ===== */
+.post-content h2 {
+  border-left: 4px solid var(--accent-color);
+  padding-left: 12px;
+  margin-top: 2rem;
+}
+
+.post-content blockquote {
+  border-left: 4px solid var(--accent-color);
+  background: rgba(16, 185, 129, 0.05);
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.5rem;
+}
+
+.post-content code {
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.post-content table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.post-content table th {
+  background: var(--primary-color) !important;
+  color: #fff;
+}
+
+/* ===== Tags ===== */
+.post-tags a {
+  background: linear-gradient(135deg, rgba(10, 92, 54, 0.1), rgba(16, 185, 129, 0.1));
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 0.85em;
+  transition: all 0.2s ease;
+}
+
+.post-tags a:hover {
+  background: var(--accent-color);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* ===== Footer Enhancements ===== */
+footer {
+  border-top: 2px solid rgba(16, 185, 129, 0.2);
+  padding-top: 1.5rem;
+}
+
+/* ===== Search Box ===== */
+.search-box input {
+  border-radius: 10px;
+  border: 2px solid rgba(128, 128, 128, 0.2);
+  transition: border-color 0.3s ease;
+}
+
+.search-box input:focus {
+  border-color: var(--accent-color);
+}
+
+/* ===== In-Post Donate Button ===== */
+.donate-section {
+  text-align: center;
+  padding: 2rem;
+  margin: 2rem 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.donate-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+  animation: pulse-bg 4s ease-in-out infinite;
+}
+
+@keyframes pulse-bg {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+.donate-section h3 {
+  color: #fff;
+  margin: 0 0 0.5rem;
+  position: relative;
+  z-index: 1;
+  font-size: 1.3em;
+}
+
+.donate-section p {
+  color: #aaa;
+  margin: 0 0 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.donate-btn {
+  display: inline-block;
+  padding: 10px 28px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: #fff !important;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 15px rgba(10, 92, 54, 0.4);
+}
+
+.donate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(10, 92, 54, 0.5);
+  filter: brightness(1.15);
+}
+
+/* ===== Reading Progress Bar ===== */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+  z-index: 9999;
+  transition: width 0.1s ease;
+}
+
+/* ===== Back to Top Button ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(10, 92, 54, 0.4);
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(10, 92, 54, 0.5);
+}
+
+/* ===== Dark Mode Enhancements ===== */
+[data-theme="dark"] .post-entry {
+  border-color: rgba(16, 185, 129, 0.2) !important;
+}
+
+[data-theme="dark"] .post-entry:hover {
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 8px 30px rgba(16, 185, 129, 0.15);
+}
+
+[data-theme="dark"] .donate-section {
+  background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .profile-mode .profile-inner .main-links {
+    flex-direction: column;
+  }
+  
+  .profile-mode .profile-inner .main-links a {
+    width: 100%;
+    margin: 0.3rem 0;
+  }
+  
+  .donate-section {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* ===== Animation ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.post-entry {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.post-entry:nth-child(2) { animation-delay: 0.1s; }
+.post-entry:nth-child(3) { animation-delay: 0.2s; }
+.post-entry:nth-child(4) { animation-delay: 0.3s; }
+</style>
