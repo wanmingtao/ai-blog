@@ -53,11 +53,17 @@ document.addEventListener("DOMContentLoaded", function() {
   const isPost = document.querySelector(".post-header");
   if (!isPost) return;
   
+  // Detect site base path from current URL
+  const path = window.location.pathname;
+  const siteMatch = path.match(/^(.*?)\/posts\//);
+  const basePath = siteMatch ? siteMatch[1] : "";
+  const donateUrl = basePath + "/donate/";
+  
   const donateHTML = `
     <div class="donate-section">
       <h3>☕ 如果这篇文章对你有帮助</h3>
       <p>欢迎请作者喝杯咖啡，你的支持是持续创作的动力</p>
-      <a href="/donate/" class="donate-btn">💰 打赏支持</a>
+      <a href="${donateUrl}" class="donate-btn">💰 打赏支持</a>
     </div>
   `;
   

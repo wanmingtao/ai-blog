@@ -25,7 +25,6 @@ paginate = 6
   hideSummary = false
   showtoc = true
   tocopen = true
-  showDonateButton = true
 
   [params.homeInfoParams]
     Title = ""
