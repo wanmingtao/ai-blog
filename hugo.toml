@@ -1,0 +1,84 @@
+baseURL = "https://wanmingtao.github.io/ai-blog/"
+languageCode = "zh-cn"
+defaultContentLanguage = "zh"
+title = "AI 探索者"
+theme = "PaperMod"
+paginate = 6
+
+[params]
+  env = "production"
+  description = "探索人工智能前沿技术，分享AI领域的深度思考与实践心得"
+  keywords = ["AI", "人工智能", "机器学习", "深度学习", "大模型", "LLM"]
+  author = "wanmingtao"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = true
+  tocopen = true
+
+  [params.homeInfoParams]
+    Title = "🤖 AI 探索者"
+    Content = "欢迎来到我的AI博客！这里记录我对人工智能领域的探索与思考，涵盖大语言模型、机器学习、深度学习、AI应用实践等前沿话题。"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/wanmingtao"
+
+  [params.assets]
+    favicon = "/favicon.ico"
+    disableFingerprinting = true
+
+  [params.cover]
+    hidden = false
+    hiddenInList = false
+    hiddenInSingle = false
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    style = "monokai"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[[menu.main]]
+  identifier = "posts"
+  name = "📝 文章"
+  url = "/posts/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "tags"
+  name = "🏷️ 标签"
+  url = "/tags/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "categories"
+  name = "📂 分类"
+  url = "/categories/"
+  weight = 30
+
+[[menu.main]]
+  identifier = "archives"
+  name = "📚 归档"
+  url = "/archives/"
+  weight = 40
+
+[[menu.main]]
+  identifier = "search"
+  name = "🔍 搜索"
+  url = "/search/"
+  weight = 50
